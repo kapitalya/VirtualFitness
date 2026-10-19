@@ -31,6 +31,8 @@ public class UnitConverter {
                 switch (pUnitOut) {
                     case KG:
                         return LbstoKg(pWeight);
+                    case STONES:
+                        return LbstoStones(pWeight);
                     case LBS:
                     default:
                         return pWeight;
@@ -39,6 +41,8 @@ public class UnitConverter {
                 switch (pUnitOut) {
                     case KG:
                         return StonestoKg(pWeight);
+                    case LBS:
+                        return StonestoLbs(pWeight);
                     case STONES:
                     default:
                         return pWeight;
@@ -73,11 +77,11 @@ public class UnitConverter {
     }
 
     static public float KmToMiles(float pKm) {
-        return pKm * 1.609344f;
+        return pKm / 1.609344f;
     }
 
     static public float MilesToKm(float pMiles) {
-        return pMiles / 1.609344f;
+        return pMiles * 1.609344f;
     }
 
     static public float sizeConverter(float pSize, Unit pUnitIn, Unit pUnitOut) {
