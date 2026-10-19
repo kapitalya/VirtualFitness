@@ -3,6 +3,7 @@ package com.virtualfitness;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,6 +17,7 @@ import com.virtualfitness.enums.RecordType;
 import com.virtualfitness.enums.WeightUnit;
 import com.virtualfitness.utils.UnitConverter;
 import com.virtualfitness.views.WorkoutValuesInputView;
+import com.onurkaganaldemir.ktoastlib.KToast;
 
 public class RecordEditorDialogbox extends Dialog implements View.OnClickListener {
 
@@ -83,6 +85,10 @@ public class RecordEditorDialogbox extends Dialog implements View.OnClickListene
             mCancelled = true;
             cancel();
         } else if (v.getId() == R.id.btn_update || v.getId() == R.id.btn_failed ) {
+            if (!mWorkoutValuesInput.isFilled()) {
+                KToast.warningToast(mActivity, mActivity.getResources().getText(R.string.missinginfo).toString(), Gravity.BOTTOM, KToast.LENGTH_SHORT);
+                return;
+            }
             // update record
             DAORecord daoRecord = new DAORecord(mActivity.getBaseContext());
             Record programTemplate = daoRecord.getRecord(mRecord.getTemplateRecordId());
