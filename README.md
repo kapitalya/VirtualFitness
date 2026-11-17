@@ -26,7 +26,7 @@ Android nativo en Java (`compileSdkVersion` 30, `minSdkVersion` 21, `targetSdkVe
 
 ## Instalación y uso
 
-Sin verificar: este README no probó la compilación. Abrir el proyecto con Android Studio, o compilar con el wrapper de Gradle (`./gradlew assembleDebug`, requiere SDK de Android 30). La firma de release y debug se lee de `release.properties` y `debug.properties` si existen en la raíz; esos archivos no se versionan y no deben subirse.
+Este README no probó la compilación. Abrir el proyecto con Android Studio, o compilar con el wrapper de Gradle (`./gradlew assembleDebug`, requiere SDK de Android 30). La firma de release y debug se lee de `release.properties` y `debug.properties` si existen en la raíz; esos archivos no se versionan y no deben subirse.
 
 ## Variables de entorno (solo nombres)
 
@@ -34,17 +34,17 @@ Ninguna. La configuración de firma usa archivos locales (`release.properties`, 
 
 ## Pruebas y CI
 
-Una prueba unitaria (`app/src/test/.../enums/MuscleTest.java`). No hay `.github/workflows`: CI inexistente. Ejecución: sin verificar.
+Una prueba unitaria (`app/src/test/.../enums/MuscleTest.java`). No hay `.github/workflows`: CI inexistente. No se ejecutó nada para esta documentación.
 
 ## Despliegue
 
-Sin despliegue verificado. Distribución en tiendas: sin verificar.
+Sin workflow ni configuración de despliegue en el repo. Distribución en tiendas: sin verificar (requiere observación externa a este repo).
 
 ## Estado y relaciones
 
 - Sin relación con otros repos de Kapitalya (sin backend, sin ForexERP); aparente proyecto ajeno al portafolio.
 - Identidad inconsistente, resto de un renombrado: `applicationId` `com.easyfitness`, `package` del manifiesto y rutas Java `com.virtualfitness`, y nombre de app "Fast N Fitness" en release.
-- El repo es **público** y es un derivado de un proyecto de terceros (identificador `com.easyfitness`, nombres como `DAOFonte` y `CVSManager`). Sin verificar: el proyecto de origen exacto, su licencia y su autor.
+- El repo es **público** y es un derivado de un proyecto de terceros (identificador `com.easyfitness`, nombres como `DAOFonte` y `CVSManager`). Proyecto de origen exacto, su licencia y su autor: sin verificar (el repo no los declara; requiere decisión del dueño e investigación externa).
 
 ## Precios y planes
 
